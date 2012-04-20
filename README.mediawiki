@@ -1,3 +1,5 @@
 '''MonoTouch.KKGridView'''
 
 MonoTouch binding of [https://github.com/kolinkrewinkel/KKGridView KKGridView]
+
+[http://f.cl.ly/items/1c230w0U2d3H3I021338/KKGridViewBanner.png]
