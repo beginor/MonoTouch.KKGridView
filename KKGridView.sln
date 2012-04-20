@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridViewDemo", "GridViewDemo\GridViewDemo.csproj", "{F6ADD65B-D28F-4C0D-8926-BC96429FD57B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding", "Binding\Binding.csproj", "{F152242A-DD6D-4245-A9CF-8AF5DEC64318}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F152242A-DD6D-4245-A9CF-8AF5DEC64318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F152242A-DD6D-4245-A9CF-8AF5DEC64318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F152242A-DD6D-4245-A9CF-8AF5DEC64318}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{F152242A-DD6D-4245-A9CF-8AF5DEC64318}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{F152242A-DD6D-4245-A9CF-8AF5DEC64318}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{F152242A-DD6D-4245-A9CF-8AF5DEC64318}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{F152242A-DD6D-4245-A9CF-8AF5DEC64318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F152242A-DD6D-4245-A9CF-8AF5DEC64318}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F152242A-DD6D-4245-A9CF-8AF5DEC64318}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{F152242A-DD6D-4245-A9CF-8AF5DEC64318}.Release|iPhone.Build.0 = Release|Any CPU
+		{F152242A-DD6D-4245-A9CF-8AF5DEC64318}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{F152242A-DD6D-4245-A9CF-8AF5DEC64318}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{F6ADD65B-D28F-4C0D-8926-BC96429FD57B}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{F6ADD65B-D28F-4C0D-8926-BC96429FD57B}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{F6ADD65B-D28F-4C0D-8926-BC96429FD57B}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{F6ADD65B-D28F-4C0D-8926-BC96429FD57B}.Debug|iPhone.Build.0 = Debug|iPhone
+		{F6ADD65B-D28F-4C0D-8926-BC96429FD57B}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{F6ADD65B-D28F-4C0D-8926-BC96429FD57B}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{F6ADD65B-D28F-4C0D-8926-BC96429FD57B}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{F6ADD65B-D28F-4C0D-8926-BC96429FD57B}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{F6ADD65B-D28F-4C0D-8926-BC96429FD57B}.Release|iPhone.ActiveCfg = Release|iPhone
+		{F6ADD65B-D28F-4C0D-8926-BC96429FD57B}.Release|iPhone.Build.0 = Release|iPhone
+		{F6ADD65B-D28F-4C0D-8926-BC96429FD57B}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{F6ADD65B-D28F-4C0D-8926-BC96429FD57B}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = GridViewDemo\GridViewDemo.csproj
+	EndGlobalSection
+EndGlobal
