@@ -63,67 +63,72 @@ namespace MonoTouch.KKGrid {
 	// For more information, see http://docs.xamarin.com/ios/advanced_topics/binding_objective-c_types
 	//
 	
+//@protocol KKGridViewDataSource <NSObject>
 	[BaseType(typeof(NSObject))]
 	[Model]
 	interface KKGridViewDataSource {
-		
+//@required
+//- (NSUInteger)gridView:(KKGridView *)gridView numberOfItemsInSection:(NSUInteger)section;
 		[Abstract, Export("gridView:numberOfItemsInSection:")]
 		uint GridViewNumberOfItemsInSection(KKGridView gridView, uint section);
-		
+//- (KKGridViewCell *)gridView:(KKGridView *)gridView cellForItemAtIndexPath:(KKIndexPath *)indexPath;
 		[Abstract, Export("gridView:cellForItemAtIndexPath:")]
 		KKGridViewCell GridViewCellForItemAtIndexPath(KKGridView gridView, KKIndexPath indexPath);
-		
+//@optional
+//- (NSUInteger)numberOfSectionsInGridView:(KKGridView *)gridView;
 		[Export("numberOfSectionsInGridView:")]
 		uint NumberOfSectionsInGridView(KKGridView gridView);
-		
+//- (NSString *)gridView:(KKGridView *)gridView titleForHeaderInSection:(NSUInteger)section;
 		[Export("gridView:titleForHeaderInSection:")]
-		string GridViewTitleForHeaderInSection(KKGridView gridView, uint section);
-		
+		string GridViewTitleFoHeaderInSection(KKGridView gridView, uint section);
+//- (NSString *)gridView:(KKGridView *)gridView titleForFooterInSection:(NSUInteger)section;
 		[Export("gridView:titleForFooterInSection:")]
 		string GridViewTitleForFooterInSection(KKGridView gridView, uint section);
-		
+//- (CGFloat)gridView:(KKGridView *)gridView heightForHeaderInSection:(NSUInteger)section;
 		[Export("gridView:heightForHeaderInSection:")]
 		float GridViewHeightForHeaderInSection(KKGridView gridView, uint section);
-		
+//- (CGFloat)gridView:(KKGridView *)gridView heightForFooterInSection:(NSUInteger)section;
 		[Export("gridView:heightForFooterInSection:")]
 		float GridViewHeightForFooterInSection(KKGridView gridView, uint section);
-		
+//- (UIView *)gridView:(KKGridView *)gridView viewForHeaderInSection:(NSUInteger)section;
 		[Export("gridView:viewForHeaderInSection:")]
 		UIView GridViewViewForHeaderInSection(KKGridView gridView, uint section);
-		
+//- (UIView *)gridView:(KKGridView *)gridView viewForFooterInSection:(NSUInteger)section;
 		[Export("gridView:viewForFooterInSection:")]
 		UIView GridViewViewForFooterInSection(KKGridView gridView, uint section);
-		
+//- (UIView *)gridView:(KKGridView *)gridView viewForRow:(NSUInteger)row inSection:(NSUInteger)section; // a row is compromised of however many cells fit in a column of a given section
 		[Export("gridView:viewForRow:inSection:")]
 		UIView GridViewViewForRowInSection(KKGridView gridView, uint row, uint section);
-		
+//- (NSArray *)sectionIndexTitlesForGridView:(KKGridView *)gridView;
 		[Export("sectionIndexTitlesForGridView:")]
 		string[] SectionIndexTitlesForGridView(KKGridView gridView);
-		
+//- (NSInteger)gridView:(KKGridView *)gridView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index;
 		[Export("gridView:sectionForSectionIndexTitle:atIndex:")]
 		int GridViewSectionForSectionIndexTitleAtIndex(KKGridView gridView, string title, int index);
-		
+//@end
 	}
-	
+
+//@protocol KKGridViewDelegate <NSObject, UIScrollViewDelegate>
 	[BaseType(typeof(UIScrollViewDelegate))]
 	[Model]
 	interface KKGridViewDelegate {
-		
+//@optional
+//- (void)gridView:(KKGridView *)gridView didSelectItemAtIndexPath:(KKIndexPath *)indexPath;
 		[Export("gridView:didSelectItemAtIndexPath:")]
 		void GridViewDidSelectItemAtIndexPath(KKGridView gridView, KKIndexPath indexPath);
-		
+//- (void)gridView:(KKGridView *)gridView didDeselectItemAtIndexPath:(KKIndexPath *)indexPath;
 		[Export("gridView:didDeselectItemAtIndexPath:")]
 		void GridViewDidDeselectItemAtIndexPath(KKGridView gridView, KKIndexPath indexPath);
-		
+//- (KKIndexPath *)gridView:(KKGridView *)gridView willSelectItemAtIndexPath:(KKIndexPath *)indexPath;
 		[Export("gridView:willSelectItemAtIndexPath:")]
 		KKIndexPath GridViewWillSelectItemAtIndexPath(KKGridView gridView, KKIndexPath indexPath);
-		
+//- (KKIndexPath *)gridView:(KKGridView *)gridView willDeselectItemAtIndexPath:(KKIndexPath *)indexPath;
 		[Export("gridView:willDeselectItemAtIndexPath:")]
 		KKIndexPath GridViewWillDeselectItemAtIndexPath(KKGridView gridView, KKIndexPath indexPath);
-		
+//- (void)gridView:(KKGridView *)gridView willDisplayCell:(KKGridViewCell *)cell atIndexPath:(KKIndexPath *)indexPath;
 		[Export("gridView:willDisplayCell:atIndexPath:")]
 		void GridWillDisplayCellAtIndexPath(KKGridView gridView, KKGridViewCell cell, KKIndexPath indexPath);
-		
+//@end
 	}
 	
 
