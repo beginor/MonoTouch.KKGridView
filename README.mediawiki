@@ -1,3 +1,9 @@
 '''MonoTouch.KKGridView'''
 
 MonoTouch binding of [https://github.com/kolinkrewinkel/KKGridView KKGridView]
+
+'''Getting started: '''
+
+# Open Terminal window and navigate to the binding project folder, then type '''make all''' to build;
+# Then use MonoDevelop open the KKGridView.sln , rebuild Binding product using MonoDevelop;
+# Run the demo project .
