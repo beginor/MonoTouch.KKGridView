@@ -32,7 +32,8 @@ sdk:
 # 编译 MonoTouch 组件
 asm:
 # 使用 btouch 编译出的 dll 文件总是无法运行， 不知是怎么回事， 只能用 MonoDevelop 进行编译， 所以把这里注释掉了。
-#	$(BTOUCH) -d=MONOTOUCH -out:bin/$(TARGET).dll api.cs -s:enum.cs --link-with=$(SDK),$(SDK)
+# bash$ /Developer/MonoTouch/usr/bin/btouch -e cocos2d.cs -s:enums.cs -x:extensions.cs
+#	$(BTOUCH) -e api.cs -s:enum.cs --link-with=$(SDK),$(SDK) -out:bin/$(TARGET).dll
 
 # 清理
 clean:

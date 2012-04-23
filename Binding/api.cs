@@ -70,41 +70,41 @@ namespace MonoTouch.KKGrid {
 //@required
 //- (NSUInteger)gridView:(KKGridView *)gridView numberOfItemsInSection:(NSUInteger)section;
 		[Abstract, Export("gridView:numberOfItemsInSection:")]
-		uint GridViewNumberOfItemsInSection(KKGridView gridView, uint section);
+		uint GetNumberOfItems(KKGridView gridView, uint section);
 //- (KKGridViewCell *)gridView:(KKGridView *)gridView cellForItemAtIndexPath:(KKIndexPath *)indexPath;
 		[Abstract, Export("gridView:cellForItemAtIndexPath:")]
-		KKGridViewCell GridViewCellForItemAtIndexPath(KKGridView gridView, KKIndexPath indexPath);
+		KKGridViewCell GetCell(KKGridView gridView, KKIndexPath indexPath);
 //@optional
 //- (NSUInteger)numberOfSectionsInGridView:(KKGridView *)gridView;
 		[Export("numberOfSectionsInGridView:")]
-		uint NumberOfSectionsInGridView(KKGridView gridView);
+		uint GetNumberOfSections(KKGridView gridView);
 //- (NSString *)gridView:(KKGridView *)gridView titleForHeaderInSection:(NSUInteger)section;
 		[Export("gridView:titleForHeaderInSection:")]
-		string GridViewTitleFoHeaderInSection(KKGridView gridView, uint section);
+		string GetHeaderTitle(KKGridView gridView, uint section);
 //- (NSString *)gridView:(KKGridView *)gridView titleForFooterInSection:(NSUInteger)section;
 		[Export("gridView:titleForFooterInSection:")]
-		string GridViewTitleForFooterInSection(KKGridView gridView, uint section);
+		string GetFooterTitle(KKGridView gridView, uint section);
 //- (CGFloat)gridView:(KKGridView *)gridView heightForHeaderInSection:(NSUInteger)section;
 		[Export("gridView:heightForHeaderInSection:")]
-		float GridViewHeightForHeaderInSection(KKGridView gridView, uint section);
+		float GetHeaderHeight(KKGridView gridView, uint section);
 //- (CGFloat)gridView:(KKGridView *)gridView heightForFooterInSection:(NSUInteger)section;
 		[Export("gridView:heightForFooterInSection:")]
-		float GridViewHeightForFooterInSection(KKGridView gridView, uint section);
+		float GetFooterHeight(KKGridView gridView, uint section);
 //- (UIView *)gridView:(KKGridView *)gridView viewForHeaderInSection:(NSUInteger)section;
 		[Export("gridView:viewForHeaderInSection:")]
-		UIView GridViewViewForHeaderInSection(KKGridView gridView, uint section);
+		UIView GetrHeader(KKGridView gridView, uint section);
 //- (UIView *)gridView:(KKGridView *)gridView viewForFooterInSection:(NSUInteger)section;
 		[Export("gridView:viewForFooterInSection:")]
-		UIView GridViewViewForFooterInSection(KKGridView gridView, uint section);
+		UIView GetFooter(KKGridView gridView, uint section);
 //- (UIView *)gridView:(KKGridView *)gridView viewForRow:(NSUInteger)row inSection:(NSUInteger)section; // a row is compromised of however many cells fit in a column of a given section
 		[Export("gridView:viewForRow:inSection:")]
-		UIView GridViewViewForRowInSection(KKGridView gridView, uint row, uint section);
+		UIView GetViewForRow(KKGridView gridView, uint row, uint section);
 //- (NSArray *)sectionIndexTitlesForGridView:(KKGridView *)gridView;
 		[Export("sectionIndexTitlesForGridView:")]
-		string[] SectionIndexTitlesForGridView(KKGridView gridView);
+		string[] GetSectionIndexTitles(KKGridView gridView);
 //- (NSInteger)gridView:(KKGridView *)gridView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index;
 		[Export("gridView:sectionForSectionIndexTitle:atIndex:")]
-		int GridViewSectionForSectionIndexTitleAtIndex(KKGridView gridView, string title, int index);
+		int GetSection(KKGridView gridView, string title, int index);
 //@end
 	}
 
@@ -115,19 +115,19 @@ namespace MonoTouch.KKGrid {
 //@optional
 //- (void)gridView:(KKGridView *)gridView didSelectItemAtIndexPath:(KKIndexPath *)indexPath;
 		[Export("gridView:didSelectItemAtIndexPath:")]
-		void GridViewDidSelectItemAtIndexPath(KKGridView gridView, KKIndexPath indexPath);
+		void DidSelectItem(KKGridView gridView, KKIndexPath indexPath);
 //- (void)gridView:(KKGridView *)gridView didDeselectItemAtIndexPath:(KKIndexPath *)indexPath;
 		[Export("gridView:didDeselectItemAtIndexPath:")]
-		void GridViewDidDeselectItemAtIndexPath(KKGridView gridView, KKIndexPath indexPath);
+		void DidDeselectItem(KKGridView gridView, KKIndexPath indexPath);
 //- (KKIndexPath *)gridView:(KKGridView *)gridView willSelectItemAtIndexPath:(KKIndexPath *)indexPath;
 		[Export("gridView:willSelectItemAtIndexPath:")]
-		KKIndexPath GridViewWillSelectItemAtIndexPath(KKGridView gridView, KKIndexPath indexPath);
+		KKIndexPath WillSelectItem(KKGridView gridView, KKIndexPath indexPath);
 //- (KKIndexPath *)gridView:(KKGridView *)gridView willDeselectItemAtIndexPath:(KKIndexPath *)indexPath;
 		[Export("gridView:willDeselectItemAtIndexPath:")]
-		KKIndexPath GridViewWillDeselectItemAtIndexPath(KKGridView gridView, KKIndexPath indexPath);
+		KKIndexPath WillDeselectItem(KKGridView gridView, KKIndexPath indexPath);
 //- (void)gridView:(KKGridView *)gridView willDisplayCell:(KKGridViewCell *)cell atIndexPath:(KKIndexPath *)indexPath;
 		[Export("gridView:willDisplayCell:atIndexPath:")]
-		void GridWillDisplayCellAtIndexPath(KKGridView gridView, KKGridViewCell cell, KKIndexPath indexPath);
+		void WillDisplayCell(KKGridView gridView, KKGridViewCell cell, KKIndexPath indexPath);
 //@end
 	}
 	
@@ -180,23 +180,23 @@ namespace MonoTouch.KKGrid {
 
 //- (KKGridViewCell *)dequeueReusableCellWithIdentifier:(NSString *)identifier;
 		[Export("dequeueReusableCellWithIdentifier:")]
-		KKGridViewCell DequeueReusableCellWithIdentifier(string identifier);
+		KKGridViewCell DequeueReusableCell(string identifier);
 //- (CGRect)rectForCellAtIndexPath:(KKIndexPath *)indexPath;
 		[Export("rectForCellAtIndexPath:")]
-		RectangleF RectForCellAtIndexPath(KKIndexPath indexPath);
+		RectangleF RectForCell(KKIndexPath indexPath);
 //- (NSArray *)visibleIndexPaths;
 		[Export("visibleIndexPaths")]
-		KKIndexPath[] VisibleIndexPaths();
+		KKIndexPath[] GetVisibleIndexPaths();
 
 //- (KKIndexPath *)indexPathForCell:(KKGridViewCell *)cell;
 		[Export("indexPathForCell:")]
-		KKIndexPath IndexPathForCell(KKGridViewCell cell);
+		KKIndexPath GetIndexPath(KKGridViewCell cell);
 //- (KKIndexPath *)indexPathForItemAtPoint:(CGPoint)point;
 		[Export("indexPathForItemAtPoint:")]
-		KKIndexPath IndexPathForItemAtPoint(PointF point);
+		KKIndexPath GetIndexPath(PointF point);
 //- (NSArray *)indexPathsForItemsInRect:(CGRect)rect;
 		[Export("indexPathsForItemsInRect:")]
-		KKIndexPath[] IndexPathsForItemsInRect(RectangleF rect);
+		KKIndexPath[] GetIndexPaths(RectangleF rect);
 
 //#pragma mark - Reloading
 
@@ -211,17 +211,17 @@ namespace MonoTouch.KKGrid {
 
 //- (void)reloadItemsAtIndexPaths:(NSArray *)indexPaths;
 		[Export("reloadItemsAtIndexPaths:")]
-		void ReloadItemsAtIndexPaths(KKIndexPath[] indexPaths);
+		void ReloadItems(KKIndexPath[] indexPaths);
 //- (void)insertItemsAtIndexPaths:(NSArray *)indexPaths withAnimation:(KKGridViewAnimation)animation;
 		[Export("insertItemsAtIndexPaths:withAnimation:")]
-		void InsertItemsAtIndexPathsWithAnimation(KKIndexPath[] indexPaths, KKGridViewAnimation animation);
+		void InsertItems(KKIndexPath[] indexPaths, KKGridViewAnimation animation);
 //- (void)deleteItemsAtIndexPaths:(NSArray *)indexPaths withAnimation:(KKGridViewAnimation)animation;
 		[Export("deleteItemsAtIndexPaths:withAnimation:")]
-		void DeleteItemsAtIndexPathsWithAnimation(KKIndexPath[] indexPaths, KKGridViewAnimation animation);
+		void DeleteItems(KKIndexPath[] indexPaths, KKGridViewAnimation animation);
 ////- (void)moveItemAtIndexPath:(KKIndexPath *)indexPath toIndexPath:(KKIndexPath *)newIndexPath;
 //- (void)scrollToItemAtIndexPath:(KKIndexPath *)indexPath animated:(BOOL)animated position:(KKGridViewScrollPosition)scrollPosition;
 		[Export("scrollToItemAtIndexPath:animated:position")]
-		void ScrollToItemAtIndexPathAnimatedPosition(KKIndexPath indexPath, bool animated, KKGridViewScrollPosition scrollPosition);
+		void ScrollToItem(KKIndexPath indexPath, bool animated, KKGridViewScrollPosition scrollPosition);
 
 //#pragma mark - Unimplemented
 
@@ -234,10 +234,10 @@ namespace MonoTouch.KKGrid {
 
 //- (void)selectItemsAtIndexPaths:(NSArray *)indexPaths animated:(BOOL)animated;
 		[Export("selectItemsAtIndexPaths:animated:")]
-		void SelectItemsAtIndexpathsAnimated(KKIndexPath[] indexPaths , bool animated);
+		void SelectItems(KKIndexPath[] indexPaths , bool animated);
 //- (void)deselectItemsAtIndexPaths:(NSArray *)indexPaths animated:(BOOL)animated;
 		[Export("deselectItemsAtIndexPaths:animated:")]
-		void DeselectItemsAtIndexPathsAnimated(KKIndexPath[] indexPaths, bool animated);
+		void DeselectItems(KKIndexPath[] indexPaths, bool animated);
 //- (void)deselectAll: (BOOL)animated;
 		[Export("deselectAll:")]
 		void DeselectAll(bool animated);
@@ -247,10 +247,10 @@ namespace MonoTouch.KKGrid {
 
 //- (KKIndexPath *)indexPathForSelectedCell;
 		[Export("indexPathForSelectedCell")]
-		KKIndexPath IndexPathForSelectedCell();
+		KKIndexPath GetIndexPathForSelectedCell();
 //- (NSArray *)indexPathsForSelectedCells;
 		[Export("indexPathsForSelectedCells")]
-		KKIndexPath[] IndexPathsForSelectedCells();
+		KKIndexPath[] GetIndexPathsForSelectedCells();
 		
 	}
 //@end
@@ -263,13 +263,13 @@ namespace MonoTouch.KKGrid {
 
 //+ (NSString *)cellIdentifier;
 		[Static, Export("cellIdentifier")]
-		string CellIdentifier();
+		string GetCellIdentifier();
 
 //#pragma mark - Designated Initializer
 
 //+ (id)cellForGridView:(KKGridView *)gridView;
 		[Static, Export("cellForGridView:")]
-		KKGridViewCell CellFroGridView(KKGridView gridView);
+		KKGridViewCell GetCell(KKGridView gridView);
 //- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier;
 		[Export("initWithFrame:reuseIdentifier:")]
 		IntPtr Constructor(RectangleF frame, string resuseIdentifier);
@@ -315,10 +315,10 @@ namespace MonoTouch.KKGrid {
 
 //- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 		[Export("setSelected:animated:")]
-		void SetSelectedAnimated(bool selected, bool animated);
+		void SetSelected(bool selected, bool animated);
 //- (void)setEditing:(BOOL)editing animated:(BOOL)animated;
 		[Export("setEditing:animated:")]
-		void SetEditingAnimated(bool editing, bool animated);
+		void SetEditing(bool editing, bool animated);
 //#pragma mark - Subclassers
 
 //- (void)prepareForReuse;
@@ -333,28 +333,28 @@ namespace MonoTouch.KKGrid {
 	interface KKIndexPath /*: NSCopying */ {
 //+ (KKIndexPath *)zeroIndexPath;
 		[Static, Export("zeroIndexPath")]
-		KKIndexPath ZeroIndexPath();
+		KKIndexPath Zero();
 //+ (NSArray *)indexPathsWithNSIndexPaths:(NSArray *)indexPaths;
 		[Static, Export("indexPathsWithNSIndexPaths:")]
-		KKIndexPath[] IndexPathsWithNSIndexPaths();
+		KKIndexPath[] FromNSIndexPaths();
 
 //- (id)initWithIndex:(NSUInteger)index section:(NSUInteger)section;
 		[Export("initWithIndex:section:")]
 		IntPtr Constructor(uint index, uint section);
 //+ (id)indexPathForIndex:(NSUInteger)index inSection:(NSUInteger)section;
 		[Static, Export("indexPathForIndex:inSection:")]
-		KKIndexPath IndexPathForIndexInSection(uint index, uint section);
+		KKIndexPath GetIndexPath(uint index, uint section);
 
 //- (id)initWithNSIndexPath:(NSIndexPath *)indexPath;
 		[Export("initWithNSIndexPath:")]
 		IntPtr Constructor(NSIndexPath indexPath);
 //+ (id)indexPathWithNSIndexPath:(NSIndexPath *)indexPath;
 		[Static, Export("indexPathWithNSIndexPath:")]
-		KKIndexPath IndexPathWithNSIndexPath(NSIndexPath indexPath);
+		KKIndexPath FromNSIndexPath(NSIndexPath indexPath);
 
 //- (NSIndexPath *)NSIndexPath;
 		[Export("NSIndexPath")]
-		NSIndexPath NSIndexPath();
+		NSIndexPath ToNSIndexPath();
 
 //- (NSComparisonResult)compare:(id)other;
 		[Export("compare:")]
@@ -372,12 +372,18 @@ namespace MonoTouch.KKGrid {
 	
 //@interface KKGridViewController : UIViewController <KKGridViewDataSource, KKGridViewDelegate>
 	[BaseType(typeof(UIViewController))]
-	interface KKGridViewController {
+	interface KKGridViewController : KKGridViewDataSource, KKGridViewDelegate {
 	
 //@property (nonatomic, strong) KKGridView *gridView;
 		[Export("gridView")]
 		KKGridView GridView { get; set; }
-	
+
+		[Export("gridView:numberOfItemsInSection:")]
+		uint GetNumberOfItems(KKGridView gridView, uint section);
+
+		[Export("gridView:cellForItemAtIndexPath:")]
+		KKGridViewCell GetCell(KKGridView gridView, KKIndexPath indexPath);
+
 //@end
 	}
 
