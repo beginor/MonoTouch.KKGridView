@@ -1,6 +1,7 @@
 *.suo
 *.manifest
 *.user
+*.userprefs
 *.pidb
 *.DS_Store
 TestResults

@@ -6,7 +6,7 @@ TARGET=$(PROJECT_ROOT)
 SDK=lib$(TARGET).a
 BTOUCH=/Developer/MonoTouch/usr/bin/btouch
 SMCS=/Developer/MonoTouch/usr/bin/smcs
-XBUILD=/Developer/usr/bin/xcodebuild
+XBUILD=xcodebuild
 
 # 从github获取源代码
 $(PROJECT_ROOT):

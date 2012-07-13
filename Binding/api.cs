@@ -369,7 +369,7 @@ namespace MonoTouch.KKGrid {
 
 //@end
 	}
-	
+/*	
 //@interface KKGridViewController : UIViewController <KKGridViewDataSource, KKGridViewDelegate>
 	[BaseType(typeof(UIViewController))]
 	interface KKGridViewController : KKGridViewDataSource, KKGridViewDelegate {
@@ -386,6 +386,6 @@ namespace MonoTouch.KKGrid {
 
 //@end
 	}
-
+*/
 }
 

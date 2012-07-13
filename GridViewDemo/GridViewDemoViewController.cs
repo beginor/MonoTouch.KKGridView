@@ -73,11 +73,11 @@ namespace GridViewDemo {
 	
 	public class GridViewDataSource : KKGridViewDataSource {
 		
-		public override uint NumberOfSectionsInGridView(KKGridView gridView) {
+		public override uint GetNumberOfSections(KKGridView gridView) {
 			return 18;
 		}
 		
-		public override uint GridViewNumberOfItemsInSection(KKGridView gridView, uint section) {
+		public override uint GetNumberOfItems(KKGridView gridView, uint section) {
 			return 4;
 		}
 		
@@ -90,8 +90,8 @@ namespace GridViewDemo {
 		}
 		*/
 
-		public override KKGridViewCell GridViewCellForItemAtIndexPath(KKGridView gridView, KKIndexPath indexPath) {
-			var cell = KKGridViewCell.CellFroGridView(gridView);
+		public override KKGridViewCell GetCell(KKGridView gridView, KKIndexPath indexPath) {
+			var cell = KKGridViewCell.GetCell(gridView);
 			cell.AccessoryType = KKGridViewCellAccessoryType.ChristianDalonzo;
 			return cell;
 		}
